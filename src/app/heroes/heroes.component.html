@@ -1,0 +1,89 @@
+<!-- <h2>{{hero.firstName + " "+ hero.lastName +" "+hero.city | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div>
+  <label for="name">First Name: </label>
+  <input  [(ngModel)]="hero.firstName" placeholder="firstname">
+</div>
+<div>
+    <label for="name">Last Name: </label>
+    <input  [(ngModel)]="hero.lastName" placeholder="lastname">
+  </div>
+  <div>
+    <label>City:</label>
+    <input [(ngModel)]="hero.city">
+  </div> -->
+  <div class="container-fluid  bg-warning ">
+    <nav class="bg-info text-white font-weight-bold text-center p-2 h1">Welcome</nav>
+    <label class="text-danger h4"> Details</label>
+ 
+
+    <h2>My Heroes</h2>
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes">
+        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+          <span class="badge">{{hero.id}}</span>
+          <span class="name">{{hero.firstName}}</span>
+        </button>
+      </li>
+    </ul>
+    
+    <div *ngIf="selectedHero">
+      <h2>{{selectedHero.firstName | uppercase}} Details</h2>
+      <div>id: {{selectedHero.id}}</div>
+      <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="selectedHero.firstName" placeholder="name">
+      </div>
+    </div>
+
+
+
+    <!-- <table class="table">
+      <thead>
+        <tr >
+          <th>id</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>City</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroes">
+          <td>{{hero.id}}</td>
+          <td>{{hero.firstName}}</td>
+          <td>{{hero.lastName}}</td>
+          <td>{{hero.city}}</td>
+        </tr>
+      
+      </tbody>
+    </table>
+   -->
+<!-- <div class="container  d-flex justify-content-center align-items-center p-5 ">
+  <form class="bg-success border border-secondary rounded p-3">
+    <div class="row form">
+      <div class="col-md-4 col-sm-12 col-lg-4 ">
+    <label for="name" class="h4 text-white">First Name: </label>
+    <input  [(ngModel)]="hero.firstName" placeholder="firstname" [ngModelOptions]="{standalone: true}">
+  </div>
+<div class="col-md-4 col-sm-12 col-lg-4">
+    <label for="last name" class="h4 text-white">Last Name: </label>
+    <input  [(ngModel)]="hero.lastName" placeholder="lastname" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="col-md-4 col-sm-12 col-lg-4">
+    <label for="city" class="h4 text-white">City:</label>
+    <input [(ngModel)]="hero.city" placeholder="city" [ngModelOptions]="{standalone: true}">
+  </div>
+  
+    </div>
+      </form>
+      
+  </div> -->
+  <footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
+  </div>
+ 
